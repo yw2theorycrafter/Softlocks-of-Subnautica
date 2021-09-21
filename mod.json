@@ -1,0 +1,9 @@
+{
+  "Id": "Softlocks of Subnautica",
+  "DisplayName": "Softlocks of Subnautica",
+  "Author": "yw2theorycrafter, kairality",
+  "Version": "1.0.0.0",
+  "Game": "Subnautica",
+  "AssemblyName": "Softlocks of Subnautica.dll",
+  "Enable": true
+}
