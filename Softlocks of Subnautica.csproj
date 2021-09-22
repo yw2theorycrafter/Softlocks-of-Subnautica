@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="Logger.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Patches\Pickupable_Patches.cs" />
+    <Compile Include="Patches\ItemsContainer_Patches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
