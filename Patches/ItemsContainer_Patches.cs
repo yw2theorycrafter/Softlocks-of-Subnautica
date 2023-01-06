@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using HarmonyLib;
 
 namespace Softlocks_of_Subnautica.Patches
@@ -12,7 +8,6 @@ namespace Softlocks_of_Subnautica.Patches
     {
 
         [HarmonyPatch(typeof(ItemsContainer), nameof(ItemsContainer.UnsafeAdd), new Type[] { typeof(InventoryItem) })]
-#pragma warning disable IDE0051 // Remove unused private members
         static void Postfix(ItemsContainer __instance, InventoryItem __0)
         {
 #if DEBUG

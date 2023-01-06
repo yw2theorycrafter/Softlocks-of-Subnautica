@@ -1,25 +1,26 @@
 ﻿using HarmonyLib;
-using QModManager.API.ModLoading;
-using QModManager.API;
+using BepInEx;
 using System.Reflection;
 
 namespace Softlocks_of_Subnautica
 {
-    // Your main patching class must have the QModCore attribute (and must be public)
-    [QModCore]
-    public static class Main
+    [BepInPlugin(GUID, MODNAME, VERSION)]
+    public class Plugin : BaseUnityPlugin
     {
-        // Your patching method must have the QModPatch attribute (and must be public)
-        [QModPatch]
-        public static void Patch()
+        #region[Declarations]
+        private const string
+            MODNAME = "softlocksofsubnautica",
+            AUTHOR = "yw2theorycrafter",
+            GUID = "com.yw2theorycrafter.softlocksofsubnautica",
+            VERSION = "1.2.0.0";
+        #endregion
+        public void Patch()
         {
-            // Add your patching code here
-            //QModServices.Main.AddCriticalMessage("Softlocks Of Subnautica loaded.");
-#if DEBUG
-            Logger.Log("Softlocks Of Subnautica loaded.");
-#endif
             Harmony harmony = new Harmony("com.yw2theorycrafter.softlocksofsubnautica");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+#if DEBUG
+            Softlocks_of_Subnautica.Logger.Log("Softlocks Of Subnautica loaded.");
+#endif
         }
     }
 }
